@@ -6,3 +6,4 @@ DCOILWTICO: "WTI crude oil ($/barrel) – https://fred.stlouisfed.org/series/DCO
 PCOPPUSDM: "Copper spot price (¢/lb) – https://fred.stlouisfed.org/series/PCOPPUSDM"  #1990
 VIXCLS: "VIX index (levels) – https://fred.stlouisfed.org/series/VIXCLS" #1990
 # NOTE: 3-y stock-bond corr → derive in code later
+DGS10: "10-yr Treasury yield (%) – https://fred.stlouisfed.org/series/DGS10" #for caculating stock bond corr
