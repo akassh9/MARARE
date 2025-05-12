@@ -1,0 +1,14 @@
+# Data files
+00_data/*.parquet
+
+# Environment files
+.env
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# CI
+.github/workflows/
+EOF
