@@ -8,13 +8,21 @@ from datetime import datetime
 def main():
     # Load metadata
     meta = yaml.safe_load(open(os.path.join(os.path.dirname(__file__), "series_meta.yaml")))
-    start = "1963-01-01"
+    start = "1991-01-01"
 
     # Fetch each series
     frames = []
     for code in meta:
-        df = DataReader(code, "fred", start)
-        df.columns = [code]
+        if code == "SP500":
+            csv_path = "/Users/akash009/MARARE/00_data/sp500_yahoo.csv"
+            df = pd.read_csv(csv_path, parse_dates=["Date"])
+            df.set_index("Date", inplace=True)
+            # rename your column (whatever it was) to the FRED code
+            df.columns = ["SP500"]
+        else:
+            # fetch everything else from FRED
+            df = DataReader(code, "fred", start)
+            df.columns = [code]
         frames.append(df)
 
     # Concatenate into one DataFrame
